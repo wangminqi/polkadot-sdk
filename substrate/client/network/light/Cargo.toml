@@ -30,6 +30,7 @@ log = { workspace = true, default-features = true }
 prost = "0.12"
 sp-blockchain = { path = "../../../primitives/blockchain" }
 sc-client-api = { path = "../../api" }
+sc-network-types = { path = "../types" }
 sc-network = { path = ".." }
 sp-core = { path = "../../../primitives/core" }
 sp-runtime = { path = "../../../primitives/runtime" }
