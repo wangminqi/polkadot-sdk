@@ -80,11 +80,12 @@ environmental::environmental!(recorder: trait ProofSizeProvider);
 /// ensuring that the final storage root matches the storage root in the header of the block. In the
 /// end we return back the [`ValidationResult`] with all the required information for the validator.
 #[doc(hidden)]
+#[allow(deprecated)]
 pub fn validate_block<
 	B: BlockT,
 	E: ExecuteBlock<B>,
 	PSC: crate::Config,
-	#[allow(deprecated)] CI: crate::CheckInherents<B>,
+	CI: crate::CheckInherents<B>,
 >(
 	MemoryOptimizedValidationParams {
 		block_data,
