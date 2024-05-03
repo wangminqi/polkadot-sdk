@@ -84,7 +84,7 @@ pub fn validate_block<
 	B: BlockT,
 	E: ExecuteBlock<B>,
 	PSC: crate::Config,
-	CI: crate::CheckInherents<B>,
+	#[allow(deprecated)] CI: crate::CheckInherents<B>,
 >(
 	MemoryOptimizedValidationParams {
 		block_data,
@@ -186,6 +186,7 @@ where
 		)
 		.expect("Invalid relay chain state proof");
 
+		#[allow(deprecated)]
 		let res = CI::check_inherents(&block, &relay_chain_proof);
 
 		if !res.ok() {
